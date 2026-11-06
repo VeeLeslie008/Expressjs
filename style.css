@@ -1,0 +1,611 @@
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #1d4ed8;          /* primary blue */
+    --blue-dark: #1e3a8a;     /* deep blue */
+    --blue-mid: #2563eb;      /* hover blue */
+    --blue-light: #dbeafe;    /* soft blue fill */
+    --blue-soft: #eff6ff;     /* very light blue */
+    --blue-line: #bfdbfe;     /* blue border */
+    --white: #ffffff;
+    --ink: #0f172a;           /* near-black text */
+    --muted: #475569;         /* grey-blue text */
+    --line: #dbe4f0;          /* neutral border */
+    --good: #0f766e;
+    --bad: #b91c1c;
+    --radius: 10px;
+    --shadow: 0 1px 3px rgba(29, 78, 216, 0.08),
+              0 8px 24px rgba(29, 78, 216, 0.08);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.5;
+    padding: 1.5rem 1.25rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== Headings ===== */
+h1 {
+    font-size: 1.7rem;
+    margin: 0 0 1.25rem;
+    letter-spacing: -0.01em;
+    color: var(--blue-dark);
+    padding-bottom: 0.6rem;
+    border-bottom: 3px solid var(--blue);
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin: 0 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--blue-dark);
+}
+
+h3 {
+    font-size: 1rem;
+    margin: 1rem 0 0.5rem;
+    color: var(--blue);
+}
+
+p {
+    margin: 0.4rem 0;
+}
+
+label {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+/* ===== Inputs ===== */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    font: inherit;
+    font-size: 0.92rem;
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    color: var(--ink);
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--blue-line);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.18);
+    background: var(--blue-soft);
+}
+
+input:disabled {
+    background: var(--blue-soft);
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
+::placeholder {
+    color: #94a3b8;
+}
+
+/* ===== Forms & cards ===== */
+form {
+    background: var(--white);
+    border: 1.5px solid var(--blue-line);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.35rem;
+    margin-bottom: 1.35rem;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--blue);
+}
+
+.card {
+    background: var(--white);
+    border: 1.5px solid var(--blue-line);
+    border-radius: var(--radius);
+    padding: 1.35rem;
+    margin-bottom: 1.35rem;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--blue);
+}
+
+.card > h1 {
+    font-size: 1.25rem;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+}
+
+/* Step badge */
+.step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--white);
+    background: var(--blue);
+    border-radius: 999px;
+    flex-shrink: 0;
+}
+
+/* ===== Grid layout ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.8rem 1rem;
+    margin-bottom: 0.9rem;
+}
+
+.grid .full {
+    grid-column: 1 / -1;
+}
+
+/* ===== Buttons ===== */
+button {
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--blue);
+    background: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    letter-spacing: 0.01em;
+    transition: background 0.15s, transform 0.05s, box-shadow 0.15s;
+}
+
+button:hover {
+    background: var(--blue-mid);
+    border-color: var(--blue-mid);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button.secondary {
+    background: var(--white);
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+button.secondary:hover {
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    border-color: var(--blue);
+}
+
+button.danger {
+    background: var(--white);
+    color: var(--bad);
+    border-color: #f5c2c7;
+}
+
+button.danger:hover {
+    background: #fef2f2;
+    border-color: var(--bad);
+    color: var(--bad);
+}
+
+button.small {
+    padding: 0.32rem 0.65rem;
+    font-size: 0.78rem;
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0.8rem 0;
+    align-items: center;
+}
+
+.btn-row input {
+    flex: 1 1 200px;
+    max-width: 340px;
+}
+
+/* ===== Messages ===== */
+.msg {
+    min-height: 1.2rem;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.msg.good {
+    color: var(--good);
+}
+
+.msg.error {
+    color: var(--bad);
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-style: italic;
+    background: var(--blue-soft);
+    border-left: 3px solid var(--blue);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+}
+
+/* ===== Tables ===== */
+.table-wrap {
+    overflow-x: auto;
+    border: 1.5px solid var(--blue-line);
+    border-radius: var(--radius);
+    margin-top: 0.8rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: var(--white);
+}
+
+th,
+td {
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+}
+
+th {
+    background: var(--blue);
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr:hover td {
+    background: var(--blue-soft);
+}
+
+td.low {
+    color: var(--bad);
+    font-weight: 800;
+}
+
+td.actions {
+    white-space: nowrap;
+    display: flex;
+    gap: 0.4rem;
+}
+
+/* ===== Catalog (shopping cart) ===== */
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 0.65rem;
+    margin: 0.75rem 0 1.1rem;
+}
+
+.catalog button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    padding: 0.75rem 0.9rem;
+    text-align: left;
+    background: var(--white);
+    color: var(--blue-dark);
+    border: 1.5px solid var(--blue-line);
+    font-weight: 600;
+}
+
+.catalog button:hover {
+    background: var(--blue-light);
+    border-color: var(--blue);
+    color: var(--blue-dark);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+}
+
+.catalog button small {
+    font-size: 0.8rem;
+    color: var(--blue);
+    font-weight: 800;
+}
+
+/* ===== Stepper ===== */
+.stepper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.stepper button {
+    width: 1.95rem;
+    height: 1.95rem;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    border-color: var(--blue-line);
+}
+
+.stepper button:hover {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+}
+
+/* ===== Rows (cart summary / bank info) ===== */
+.rows {
+    margin: 0.8rem 0 0;
+    padding: 0;
+    border: 1.5px solid var(--blue-line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--white);
+}
+
+.rows > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+}
+
+.rows > div:last-child {
+    border-bottom: none;
+}
+
+.rows dt {
+    color: var(--muted);
+}
+
+.rows dd {
+    margin: 0;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.rows .total {
+    background: var(--blue-light);
+}
+
+.rows .total dt,
+.rows .total dd {
+    color: var(--blue-dark);
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+/* ===== Password requirements ===== */
+.req {
+    list-style: none;
+    padding: 0.75rem 0.9rem;
+    margin: 0.8rem 0 0;
+    display: grid;
+    gap: 0.35rem;
+    background: var(--blue-soft);
+    border: 1.5px solid var(--blue-line);
+    border-radius: var(--radius);
+}
+
+.req li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.req li::before {
+    content: "✗";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--bad);
+    font-weight: 800;
+}
+
+.req li.ok {
+    color: var(--good);
+}
+
+.req li.ok::before {
+    content: "✓";
+    color: var(--good);
+}
+
+/* ===== Checkbox (Show password) ===== */
+label.check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--blue-dark);
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 0.55rem 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+label.check input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+/* ===== Number analysis boxes ===== */
+#numBoxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+    margin: 0.5rem 0 0.9rem;
+    padding: 0.75rem;
+    background: var(--blue-soft);
+    border: 1.5px solid var(--blue-line);
+    border-radius: var(--radius);
+}
+
+#numBoxes br {
+    display: none;
+}
+
+/* ===== Employee output ===== */
+#output > h2 {
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 0.45rem;
+    color: var(--blue-dark);
+}
+
+#output > div > div {
+    border: 1.5px solid var(--blue-line);
+    border-left: 4px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 0.55rem;
+    background: var(--white);
+}
+
+#output hr {
+    display: none;
+}
+
+#output p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+}
+
+#output strong {
+    color: var(--blue-dark);
+}
+
+/* ===== Results ===== */
+#result,
+#salaryResult,
+#numberResult,
+#checkoutOut,
+#studentList,
+#invList {
+    color: var(--ink);
+}
+
+#result p,
+#salaryResult p,
+#numberResult p {
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed var(--line);
+}
+
+#result p:last-child,
+#salaryResult p:last-child,
+#numberResult p:last-child {
+    border-bottom: none;
+}
+
+#result80 h2 {
+    margin-top: 0.5rem;
+    font-size: 1.05rem;
+}
+
+#result90 {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    border: 1.5px dashed var(--blue);
+    border-radius: var(--radius);
+    background: var(--blue-soft);
+    min-height: 1.5rem;
+    font-size: 1rem;
+}
+
+#result90:empty {
+    display: none;
+}
+
+#result90 strong {
+    color: var(--blue-dark);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 0.85rem 0.75rem 2rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    form,
+    .card {
+        padding: 1rem;
+    }
+
+    .btn-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-row input {
+        max-width: none;
+    }
+
+    .btn-row button {
+        width: auto;
+        flex: 1 1 auto;
+    }
+
+    td.actions {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .catalog {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}

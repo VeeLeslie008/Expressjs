@@ -14,46 +14,34 @@
         <h2>Grade Calculator</h2>
         <label for="studentName">Student Name:</label>
         <input type="text" id="studentName" name="studentName" required> <br><br>
-
         <label for="score1">Score 1:</label>
         <input type="number" id="score1" name="score1" required> <br><br>
-
         <label for="score2">Score 2:</label>
         <input type="number" id="score2" name="score2" required> <br><br>
-
         <label for="score3">Score 3:</label>
         <input type="number" id="score3" name="score3" required> <br><br>
-
         <label for="score4">Score 4:</label>
         <input type="number" id="score4" name="score4" required> <br><br>
-
         <label for="score5">Score 5:</label>
         <input type="number" id="score5" name="score5" required><br><br>
-
         <button type="submit">Calculate Grade</button>
         <div id="result"></div>
-
     </form>
 
     <form id="salaryForm">
         <h2>Employee Salary calculator</h2>
-
         <label>Employer's Name</label>
         <input id="eName" type="text" required> <br><br>
-
         <label>Basic Salary</label>
         <input type="number" id="basic" min="0" required> <br><br>
-
         <button type="submit">Calculate Salary</button>
         <div id="salaryResult"></div>
     </form>
 
     <form action="" id="numberForm">
         <h2>Number Analysis System</h2>
-
         <label>Enter 15 numbers:</label><br>
         <div id="numBoxes"></div>
-
         <button type="submit">Analyze Numbers</button>
         <div id="numberResult"></div>
     </form>
@@ -108,7 +96,6 @@
         </div>
         <button type="submit">Update quantity</button>
     </form>
-
     <p id="invMsg" class="msg"></p>
     <div id="invList"></div>
 </section>
@@ -167,83 +154,110 @@
 
 <section class="card">
     <h1>Employee Data Processing</h1>
-
-  <button id="departmentButton">
-    Group by Department
-  </button>
-
-  <button id="aboveSalaryButton">
-    Above ₦200,000
-  </button>
-
-  <button id="averageSalaryButton">
-    Average Salary
-  </button>
-
-  <button id="highestSalaryButton">
-    Highest Salary
-  </button>
-
-  <button id="namesButton">
-    Employee Names
-  </button>
-
+  <button id="departmentButton">Group by Department</button>
+  <button id="aboveSalaryButton">Above ₦200,000</button>
+  <button id="averageSalaryButton">Average Salary</button>
+  <button id="highestSalaryButton">Highest Salary</button>
+  <button id="namesButton">Employee Names</button>
   <br><br>
-
   <div id="output"></div>
 </section>
 
 <section class="card">
     <h1>User Registration Form</h1>
-
     <form id="registrationForm" novalidate>
-    <p>
-      <label for="fullName">Full Name:</label><br>
-      <input type="text" id="fullName">
-    </p>
-
-    <p>
-      <label for="email">Email:</label><br>
-      <input type="text" id="email">
-    </p>
-
-    <p>
-      <label for="age">Age:</label><br>
-      <input type="number" id="age">
-    </p>
-
-    <p>
-      <label for="password">Password:</label><br>
-      <input type="password" id="password">
-    </p>
-
+    <p><label for="fullName">Full Name:</label><br><input type="text" id="fullName"></p>
+    <p><label for="email">Email:</label><br><input type="text" id="email"></p>
+    <p><label for="age">Age:</label><br><input type="number" id="age"></p>
+    <p><label for="password">Password:</label><br><input type="password" id="password"></p>
     <button type="submit">Register</button>
   </form>
-
   <div id="result80"></div>
 </section>
 
 <section class="card">
-
     <h1>Mathematical Utility Application</h1>
-
-     <label for="firstNumber">First Number:</label>
-  <input type="number" id="firstNumber">
-
-  <br><br>
-
-  <label for="secondNumber">Second Number:</label>
-  <input type="number" id="secondNumber">
-
-  <br><br>
-
-  <button id="addButton">Addition</button>
-  <button id="subtractButton">Subtraction</button>
-  <button id="multiplyButton">Multiplication</button>
-  <button id="divideButton">Division</button>
-
-  <div id="result90"></div>
+    <label for="firstNumber">First Number:</label>
+    <input type="number" id="firstNumber"><br><br>
+    <label for="secondNumber">Second Number:</label>
+    <input type="number" id="secondNumber"><br><br>
+    <button id="addButton">Addition</button>
+    <button id="subtractButton">Subtraction</button>
+    <button id="multiplyButton">Multiplication</button>
+    <button id="divideButton">Division</button>
+    <div id="result90"></div>
 </section>
+
+<!-- FIXED: Changed id="card" to class="card" -->
+<section class="card">
+    <h2>Question 12: JSON Data Management</h2>
+    <button onclick="runDemo()">Run JSON Program</button>
+    <div id="outputjson"></div>
+</section>
+
+<section class="card">
+    <h2>Section E: Asynchronous JavaScript</h2>
+    <h2>Question 13: Promise-Based Order Processing</h2>
+    <p>Click a button to process the order. Watch the steps happen live below:</p>
+    <button onclick="runOrderSystem(false)">Process Order (Success)</button>
+    <button onclick="runOrderSystem(true)">Failed Payment</button>
+    <div id="q13-output" class="output-box"><em>Waiting to start...</em></div>
+</section>
+
+<section class="card">
+    <h2>Question 14: Fetching Data from an External API</h2>
+    <p>Click the button to fetch users, display them, and search for a specific email.</p>
+    <button onclick="fetchUsersAPI()">Fetch & Display Users</button>
+    <div id="q14-output" class="output-box"><em>Waiting to fetch data...</em></div>
+</section>
+
+section class="card">
+    <h1>Question 15: Mini User Management</h1>
+
+    <!-- This is where the success/error message will show -->
+    <div id="alertBox" class="message"></div>
+
+    <div class="card" style="border: 1px solid #ccc; box-shadow: none; padding: 15px; margin-bottom: 20px;">
+        <h2>Register New User</h2>
+        <form id="userForm" novalidate> 
+            <input type="hidden" id="userId" value="">
+            <div class="grid">
+                <!-- NOTICE THE UNIQUE IDS: uFullName, uEmail, uAge -->
+                <div><label>Full Name</label><input type="text" id="uFullName"></div>
+                <div><label>Email Address</label><input type="text" id="uEmail"></div>
+                <div><label>Age</label><input type="number" id="uAge"></div>
+            </div>
+            <button type="submit" id="submitBtn">Register User</button>
+            <button type="button" class="secondary" id="cancelBtn" style="display:none;" onclick="resetForm()">Cancel Edit</button>
+        </form>
+    </div>
+
+    <div class="card" style="border: 1px solid #ccc; box-shadow: none; padding: 15px;">
+        <h2>Registered Users</h2>
+        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+            <input type="text" id="searchInput" placeholder="Search users by name...">
+            <button type="button" onclick="searchUsers()">Search</button>
+            <button type="button" class="secondary" onclick="loadUsers()">Show All</button>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Date Registered</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- Data goes here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
     <script src="script.js"></script>
 </body>
 </html>
