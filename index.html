@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express js class</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Express classwork</h1>
+
+    <form id="gradeForm">
+        <h2>Grade Calculator</h2>
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" required> <br><br>
+
+        <label for="score1">Score 1:</label>
+        <input type="number" id="score1" name="score1" required> <br><br>
+
+        <label for="score2">Score 2:</label>
+        <input type="number" id="score2" name="score2" required> <br><br>
+
+        <label for="score3">Score 3:</label>
+        <input type="number" id="score3" name="score3" required> <br><br>
+
+        <label for="score4">Score 4:</label>
+        <input type="number" id="score4" name="score4" required> <br><br>
+
+        <label for="score5">Score 5:</label>
+        <input type="number" id="score5" name="score5" required><br><br>
+
+        <button type="submit">Calculate Grade</button>
+        <div id="result"></div>
+
+    </form>
+
+    <form id="salaryForm">
+        <h2>Employee Salary calculator</h2>
+
+        <label>Employer's Name</label>
+        <input id="eName" type="text" required> <br><br>
+
+        <label>Basic Salary</label>
+        <input type="number" id="basic" min="0" required> <br><br>
+
+        <button type="submit">Calculate Salary</button>
+        <div id="salaryResult"></div>
+    </form>
+
+    <form action="" id="numberForm">
+        <h2>Number Analysis System</h2>
+
+        <label>Enter 15 numbers:</label><br>
+        <div id="numBoxes"></div>
+
+        <button type="submit">Analyze Numbers</button>
+        <div id="numberResult"></div>
+    </form>
+
+    <section class="card">
+    <h2><span class="step">4</span> Student Management</h2>
+    <form id="studentForm">
+        <div class="grid">
+            <div><label for="sId">Student ID</label><input id="sId" required></div>
+            <div><label for="sName">Full name</label><input id="sName" required></div>
+            <div><label for="sEmail">Email</label><input type="email" id="sEmail" required></div>
+            <div><label for="sAge">Age</label><input type="number" id="sAge" min="1" required></div>
+            <div><label for="sCourse">Course</label><input id="sCourse" required></div>
+        </div>
+        <button type="submit" id="sSubmit">Add student</button>
+    </form>
+    <div class="btn-row">
+        <input id="sSearch" placeholder="Search by student ID">
+        <button type="button" id="sSearchBtn" class="secondary">Search</button>
+        <button type="button" id="sAllBtn" class="secondary">Show all</button>
+    </div>
+    <p id="studentMsg" class="msg"></p>
+    <div id="studentList"></div>
+</section>
+
+<section class="card">
+    <h2><span class="step">5</span> Inventory</h2>
+    <form id="productForm">
+        <div class="grid">
+            <div><label for="pId">Product ID</label><input id="pId" required></div>
+            <div><label for="pName">Product name</label><input id="pName" required></div>
+            <div><label for="pPrice">Price (₦)</label><input type="number" id="pPrice" min="0" step="0.01" required></div>
+            <div><label for="pQty">Quantity</label><input type="number" id="pQty" min="0" required></div>
+        </div>
+        <button type="submit">Add product</button>
+    </form>
+
+    <div class="btn-row">
+        <button type="button" id="pAllBtn" class="secondary">Show all</button>
+        <button type="button" id="pTotalBtn" class="secondary">Total value</button>
+        <button type="button" id="pLowBtn" class="secondary">Low stock (&lt; 5)</button>
+    </div>
+    <div class="btn-row">
+        <input id="pSearch" placeholder="Search by ID or name">
+        <button type="button" id="pSearchBtn" class="secondary">Search</button>
+    </div>
+
+    <form id="qtyForm" style="margin-top:1rem">
+        <div class="grid">
+            <div><label for="uId">Product ID</label><input id="uId" required></div>
+            <div><label for="uQty">New quantity</label><input type="number" id="uQty" min="0" required></div>
+        </div>
+        <button type="submit">Update quantity</button>
+    </form>
+
+    <p id="invMsg" class="msg"></p>
+    <div id="invList"></div>
+</section>
+
+<section class="card">
+    <h2><span class="step">6</span> Shopping Cart</h2>
+    <p class="hint">Tap a product to add it to the cart.</p>
+    <div id="catalog" class="catalog"></div>
+    <div id="cartList"></div>
+    <div id="cartSummary"></div>
+    <div class="btn-row">
+        <button type="button" id="checkoutBtn">Checkout</button>
+        <button type="button" id="clearCartBtn" class="secondary">Clear cart</button>
+    </div>
+    <div id="checkoutOut"></div>
+</section>
+
+<section class="card">
+    <h2><span class="step">7</span> Bank Account</h2>
+    <form id="accountForm">
+        <div class="grid">
+            <div class="full"><label for="accName">Account holder's name</label><input id="accName" required></div>
+            <div><label for="accNo">Account number (10 digits)</label><input id="accNo" pattern="\d{10}" maxlength="10" inputmode="numeric" required></div>
+            <div><label for="accBal">Opening balance (₦)</label><input type="number" id="accBal" min="0" step="0.01" required></div>
+        </div>
+        <button type="submit">Create account</button>
+    </form>
+
+    <div class="grid" style="margin-top:1.25rem">
+        <div class="full">
+            <label for="amount">Amount (₦)</label>
+            <input type="number" id="amount" step="0.01" placeholder="Enter amount">
+        </div>
+    </div>
+    <div class="btn-row">
+        <button type="button" id="depBtn">Deposit</button>
+        <button type="button" id="wdBtn">Withdraw</button>
+        <button type="button" id="balBtn" class="secondary">Check balance</button>
+        <button type="button" id="infoBtn" class="secondary">Account info</button>
+    </div>
+    <p id="bankMsg" class="msg"></p>
+    <div id="bankOut"></div>
+</section>
+
+<section class="card">
+    <h2><span class="step">8</span> Password Validator</h2>
+    <form id="pwForm">
+        <label for="pw">Password</label>
+        <input type="password" id="pw" autocomplete="off">
+        <label class="check"><input type="checkbox" id="showPw"> Show password</label>
+        <button type="submit">Validate password</button>
+    </form>
+    <ul id="reqList" class="req"></ul>
+    <p id="pwMsg" class="msg"></p>
+</section>
+
+<section class="card">
+    <h1>Employee Data Processing</h1>
+
+  <button id="departmentButton">
+    Group by Department
+  </button>
+
+  <button id="aboveSalaryButton">
+    Above ₦200,000
+  </button>
+
+  <button id="averageSalaryButton">
+    Average Salary
+  </button>
+
+  <button id="highestSalaryButton">
+    Highest Salary
+  </button>
+
+  <button id="namesButton">
+    Employee Names
+  </button>
+
+  <br><br>
+
+  <div id="output"></div>
+</section>
+
+<section class="card">
+    <h1>User Registration Form</h1>
+
+    <form id="registrationForm" novalidate>
+    <p>
+      <label for="fullName">Full Name:</label><br>
+      <input type="text" id="fullName">
+    </p>
+
+    <p>
+      <label for="email">Email:</label><br>
+      <input type="text" id="email">
+    </p>
+
+    <p>
+      <label for="age">Age:</label><br>
+      <input type="number" id="age">
+    </p>
+
+    <p>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password">
+    </p>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="result80"></div>
+</section>
+
+<section class="card">
+
+    <h1>Mathematical Utility Application</h1>
+
+     <label for="firstNumber">First Number:</label>
+  <input type="number" id="firstNumber">
+
+  <br><br>
+
+  <label for="secondNumber">Second Number:</label>
+  <input type="number" id="secondNumber">
+
+  <br><br>
+
+  <button id="addButton">Addition</button>
+  <button id="subtractButton">Subtraction</button>
+  <button id="multiplyButton">Multiplication</button>
+  <button id="divideButton">Division</button>
+
+  <div id="result90"></div>
+</section>
+    <script src="script.js"></script>
+</body>
+</html>
